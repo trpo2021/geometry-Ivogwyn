@@ -1,0 +1,3 @@
+*.o
+.geom.c.swp
+geom
