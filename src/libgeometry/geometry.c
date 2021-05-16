@@ -1,7 +1,4 @@
-#include <ctype.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <libgeometry/geometry.h>
 
 void parcer(char* str)
 {
@@ -110,20 +107,4 @@ void parcer(char* str)
         printf("string is correct\n");
 
     printf("x = %f, y = %f, r = %f\n", x, y, r);
-}
-
-int main()
-{
-    int lenght_str = 36;
-    FILE* input;
-    input = fopen("input.txt", "r");
-    if (input == NULL) {
-        printf("Error open file\n");
-        exit(0);
-    }
-
-    char str[lenght_str];
-    fgets(str, lenght_str, input);
-    fputs(str, stdout);
-    parcer(str);
 }
