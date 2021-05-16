@@ -1,11 +1,12 @@
 #include <libgeometry/geometry.h>
 
-void parcer(char* str)
+void parcer(char* str, struct circle *c)
 {
     char proof_str[] = "circle";
     int i = 0;
     int lenght_circle = strlen(proof_str);
-    float x, y, r;
+
+    //float x, y, r;
     printf("\n");
 
     if (strncmp(proof_str, str, lenght_circle) != 0) {
@@ -32,7 +33,7 @@ void parcer(char* str)
 
     } else {
         char* xproof = &str[i];
-        x = strtof(xproof, &xproof);
+        c->x = strtof(xproof, &xproof);
         if (*xproof != ' ') {
             printf("Error, space was expected after '('\n");
             exit(0);
@@ -50,7 +51,7 @@ void parcer(char* str)
 
     } else {
         char* yproof = &str[i];
-        y = strtof(yproof, &yproof);
+        c->y = strtof(yproof, &yproof);
         if (*yproof != ' ' && *yproof != ',') {
             printf("Error, space or comma was expected after y\n");
             exit(0);
@@ -79,7 +80,7 @@ void parcer(char* str)
 
     } else {
         char* rproof = &str[i];
-        r = strtof(rproof, &rproof);
+        c->r = strtof(rproof, &rproof);
         if (*rproof != ' ' && *rproof != ')') {
             printf("Error, space or ')' was expected after r\n");
             exit(0);
@@ -105,6 +106,20 @@ void parcer(char* str)
 
     if (str[i] == '\0')
         printf("string is correct\n");
+}
 
-    printf("x = %f, y = %f, r = %f\n", x, y, r);
+float Squarecir (struct circle *c)
+{
+    const float pi=3.1415;
+    float s;
+    s = pi * c->r * c->r;
+    return s;
+}
+
+float Perimcir (struct circle *c)
+{
+    const float pi=3.1415;
+    float p;
+    p = 2 * pi * c->r;
+    return p;
 }
