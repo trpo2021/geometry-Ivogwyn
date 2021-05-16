@@ -1,0 +1,7 @@
+*.o
+.geom.c.swp
+geometry
+*.txt
+*.d
+bin/*
+*.a
