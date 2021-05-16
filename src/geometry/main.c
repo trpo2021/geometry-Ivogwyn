@@ -2,7 +2,7 @@
 
 int main()
 {
-    struct circle *c = malloc(sizeof(struct circle));
+    struct circle* c = malloc(sizeof(struct circle));
     int lenght_str = 36;
     FILE* input;
     input = fopen("input.txt", "r");

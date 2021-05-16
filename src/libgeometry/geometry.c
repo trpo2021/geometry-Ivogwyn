@@ -1,6 +1,6 @@
 #include <libgeometry/geometry.h>
 
-void parcer(char* str, struct circle *c)
+void parcer(char* str, struct circle* c)
 {
     char proof_str[] = "circle";
     int i = 0;
@@ -106,17 +106,17 @@ void parcer(char* str, struct circle *c)
         printf("string is correct\n");
 }
 
-float Squarecir (struct circle *c)
+float Squarecir(struct circle* c)
 {
-    const float pi=3.1415;
+    const float pi = 3.1415;
     float s;
     s = pi * c->r * c->r;
     return s;
 }
 
-float Perimcir (struct circle *c)
+float Perimcir(struct circle* c)
 {
-    const float pi=3.1415;
+    const float pi = 3.1415;
     float p;
     p = 2 * pi * c->r;
     return p;
